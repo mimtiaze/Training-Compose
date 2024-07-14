@@ -20,10 +20,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             TrainingTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-
+                    Greetings(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
     }
 }
 
+@Composable
+fun Greetings(modifier: Modifier = Modifier) {
+    Text(text = "Hi there", modifier = modifier)
+}
