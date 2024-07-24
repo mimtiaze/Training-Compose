@@ -1,5 +1,6 @@
 package com.mimtiaze.training.counter
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
@@ -13,7 +14,10 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 fun Counter(padding: PaddingValues) {
     val counterViewModel: CounterViewModel = viewModel()
 
-    Column(modifier = Modifier.padding(padding)) {
+    Column(
+        modifier = Modifier.padding(padding),
+        verticalArrangement = Arrangement.Center
+    ) {
         Text(text = counterViewModel.count.value.toString())
         Button(onClick = { counterViewModel.increment() }) {
             Text(text = "Increment")
